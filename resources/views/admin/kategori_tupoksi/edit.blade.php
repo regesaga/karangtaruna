@@ -1,5 +1,5 @@
 
-<div class="modal fade" id="Edit<?php echo $kategori_jabatan->id_kategori_jabatan ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="Edit<?php echo $kategori_tupoksi->id_kategori_tupoksi ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 <div class="modal-dialog">
 <div class="modal-content">
 <div class="modal-header">
@@ -8,16 +8,21 @@
 </div>
 <div class="modal-body">
     
-<form action="{{ asset('admin/kategori_jabatan/edit') }}" method="post" accept-charset="utf-8">
+<form action="{{ asset('admin/kategori_tupoksi/edit') }}" method="post" accept-charset="utf-8">
 {{ csrf_field() }}
-<input type="hidden" name="id_kategori_jabatan" value="{{ $kategori_jabatan->id_kategori_jabatan }}">
+<input type="hidden" name="id_kategori_tupoksi" value="{{ $kategori_tupoksi->id_kategori_tupoksi }}">
 <div class="form-group row">
 	<label class="col-md-3 text-right">Nama Kategori</label>
 	<div class="col-md-9">
-		<input type="text" name="nama_kategori_jabatan" class="form-control" placeholder="Nama kategori jabatan" value="<?php echo $kategori_jabatan->nama_kategori_jabatan ?>" required>
+		<input type="text" name="nama_kategori_tupoksi" class="form-control" placeholder="Nama kategori tupoksi" value="<?php echo $kategori_tupoksi->nama_kategori_tupoksi ?>" required>
 	</div>
 </div>
-
+<div class="form-group row">
+	<label class="col-md-3 text-right">Keterangan</label>
+	<div class="col-md-9">
+		<textarea name="keterangan" class="form-control" placeholder="Keterangan">{{ $kategori_tupoksi->keterangan }}</textarea>
+	</div>
+</div>
 
 
 </div>

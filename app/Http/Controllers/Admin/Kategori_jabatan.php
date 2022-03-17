@@ -25,9 +25,8 @@ class Kategori_jabatan extends Controller
     {
     	if(Session()->get('username')=="") { return redirect('login')->with(['warning' => 'Mohon maaf, Anda belum login']);}
     	request()->validate([
-					        'nama_kategori_jabatan' => 'required|unique:kategori_jabatan',
+					        'nama_kategori_jabatan' => 'required|unique:kategori_jabatan'
 					        ]);
-    	$slug_kategori_jabatan = Str::slug($request->nama_kategori_jabatan, '-');
         DB::table('kategori_jabatan')->insert([
             'nama_kategori_jabatan'   => $request->nama_kategori_jabatan,
             
@@ -40,12 +39,10 @@ class Kategori_jabatan extends Controller
     {
     	if(Session()->get('username')=="") { return redirect('login')->with(['warning' => 'Mohon maaf, Anda belum login']);}
     	request()->validate([
-					        'nama_kategori_jabatan' => 'required',
-					        'urutan'               => 'required',
+					        'nama_kategori_jabatan' => 'required'
 					        ]);
-    	$slug_kategori_jabatan = Str::slug($request->nama_kategori_jabatan, '-');
         DB::table('kategori_jabatan')->where('id_kategori_jabatan',$request->id_kategori_jabatan)->update([
-            'nama_kategori_jabatan'   => $request->nama_kategori_jabatan,
+            'nama_kategori_jabatan'   => $request->nama_kategori_jabatan
             
         ]);
         return redirect('admin/kategori_jabatan')->with(['sukses' => 'Data telah diupdate']);

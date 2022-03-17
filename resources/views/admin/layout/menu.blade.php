@@ -72,7 +72,7 @@
             <ul class="nav nav-treeview">
               <li class="nav-item"><a href="{{ asset('admin/staff') }}" class="nav-link"><i class="fas fa-table nav-icon"></i><p>Data Kepengurusan</p></a>
               </li>
-              <li class="nav-item"><a href="{{ asset('admin/staff/tambah') }}" class="nav-link"><i class="fa fa-plus nav-icon"></i><p>Tambah TUPOKSI </p></a>
+              <li class="nav-item"><a href="{{ asset('admin/kategori_tupoksi') }}" class="nav-link"><i class="fa fa-plus nav-icon"></i><p>Tambah TUPOKSI </p></a>
               </li>
               <li class="nav-item"><a href="{{ asset('admin/kategori_jabatan') }}" class="nav-link"><i class="fa fa-tags nav-icon"></i><p>Tambah Jabatan Pengurus</p></a>
               </li>
