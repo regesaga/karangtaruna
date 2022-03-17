@@ -57,9 +57,9 @@
               <p> Profil Tingkatan KT<i class="fas fa-angle-left right"></i></p>
             </a>
             <ul class="nav nav-treeview">
-              <li class="nav-item"><a href="{{ asset('admin/staff') }}" class="nav-link"><i class="fas fa-table nav-icon"></i><p>Tingkatan KT</p></a>
+              <li class="nav-item"><a href="{{ asset('admin/karangtaruna') }}" class="nav-link"><i class="fas fa-table nav-icon"></i><p>Tingkatan KT</p></a>
               </li>
-              <li class="nav-item"><a href="{{ asset('admin/staff/tambah') }}" class="nav-link"><i class="fa fa-plus nav-icon"></i><p>Profil KT </p></a>
+              <li class="nav-item"><a href="{{ asset('admin/karangtaruna/tambah') }}" class="nav-link"><i class="fa fa-plus nav-icon"></i><p>Tambah Organisasi KT </p></a>
               </li>
               
             </ul>

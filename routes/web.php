@@ -31,6 +31,20 @@ Route::get('login/logout', 'App\Http\Controllers\Login@logout');
 Route::get('admin/dasbor', 'App\Http\Controllers\Admin\Dasbor@index');
 Route::get('admin/dasbor/konfigurasi', 'App\Http\Controllers\Admin\Dasbor@konfigurasi');
 
+// kategori_organisasikarangtaruna
+Route::get('admin/karangtaruna', 'App\Http\Controllers\Admin\Karangtaruna@index');
+Route::get('admin/karangtaruna/cari', 'App\Http\Controllers\Admin\Karangtaruna@cari');
+Route::get('admin/karangtaruna/status_karangtaruna/{par1}', 'App\Http\Controllers\Admin\Karangtaruna@status_karangtaruna');
+Route::get('admin/karangtaruna/kategori/{par1}', 'App\Http\Controllers\Admin\Karangtaruna@kategori');
+Route::get('admin/karangtaruna/detail/{par1}', 'App\Http\Controllers\Admin\Karangtaruna@detail');
+Route::get('admin/karangtaruna/tambah', 'App\Http\Controllers\Admin\Karangtaruna@tambah');
+Route::get('admin/karangtaruna/edit/{par1}', 'App\Http\Controllers\Admin\Karangtaruna@edit');
+Route::get('admin/karangtaruna/delete/{par1}', 'App\Http\Controllers\Admin\Karangtaruna@delete');
+Route::post('admin/karangtaruna/tambah_proses', 'App\Http\Controllers\Admin\Karangtaruna@tambah_proses');
+Route::post('admin/karangtaruna/edit_proses', 'App\Http\Controllers\Admin\Karangtaruna@edit_proses');
+Route::post('admin/karangtaruna/proses', 'App\Http\Controllers\Admin\Karangtaruna@proses');
+
+
 
 // kategori_jabatan
 Route::get('admin/kategori_jabatan', 'App\Http\Controllers\Admin\Kategori_jabatan@index');
