@@ -1,7 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\WebController;
+use App\Http\Controllers\KecamatanController;
+use App\Http\Controllers\KabupatenController;
+use App\Http\Controllers\DesaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,8 +20,12 @@ use Illuminate\Support\Facades\Route;
 //Front Endd
 //Home
 
-Route::get('/', 'App\Http\Controllers\Home@index');
 
+Route::get('/', [WebController::class, 'index']);
+
+Auth::routes();
+
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 //Login
 Route::get('login', 'App\Http\Controllers\Login@index');
@@ -57,3 +65,30 @@ Route::get('admin/kategori_tupoksi', 'App\Http\Controllers\Admin\Kategori_tupoks
 Route::post('admin/kategori_tupoksi/tambah', 'App\Http\Controllers\Admin\Kategori_tupoksi@tambah');
 Route::post('admin/kategori_tupoksi/edit', 'App\Http\Controllers\Admin\Kategori_tupoksi@edit');
 Route::get('admin/kategori_tupoksi/delete/{par1}', 'App\Http\Controllers\Admin\Kategori_tupoksi@delete');
+
+
+
+
+//Desa
+Route::get('/desa', [DesaController::class, 'index'])->name('desa');
+Route::get('/desa/add', [DesaController::class, 'add']);
+Route::post('/desa/insert', [DesaController::class, 'insert']);
+Route::get('/desa/edit/{desa_kode}', [DesaController::class, 'edit']);
+Route::post('/desa/update/{desa_kode}', [DesaController::class, 'update']);
+Route::get('/desa/delete/{desa_kode}', [DesaController::class, 'delete']);
+
+//Kecamatan
+Route::get('/kecamatan', [KecamatanController::class, 'index'])->name('kecamatan');
+Route::get('/kecamatan/add', [KecamatanController::class, 'add']);
+Route::post('/kecamatan/insert', [KecamatanController::class, 'insert']);
+Route::get('/kecamatan/edit/{kec_kode}', [KecamatanController::class, 'edit']);
+Route::post('/kecamatan/update/{kec_kode}', [KecamatanController::class, 'update']);
+Route::get('/kecamatan/delete/{kec_kode}', [KecamatanController::class, 'delete']);
+
+//Kabupaten
+Route::get('/kabupaten', [KabupatenController::class, 'index'])->name('kabupaten');
+Route::get('/kabupaten/add', [KabupatenController::class, 'add']);
+Route::post('/kabupaten/insert', [KabupatenController::class, 'insert']);
+Route::get('/kabupaten/edit/{kab_kode}', [KabupatenController::class, 'edit']);
+Route::post('/kabupaten/update/{kab_kode}', [KabupatenController::class, 'update']);
+Route::get('/kabupaten/delete/{kab_kode}', [KabupatenController::class, 'delete']);

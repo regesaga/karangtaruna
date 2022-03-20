@@ -35,15 +35,15 @@
   
 
           <!-- Website Content -->
-          <li class="batas"><hr> <span class="infoku"><i class="fa fa-certificate"></i> Profil &amp; Layanan</span></li>
+          <li class="batas"><hr> <span class="infoku"><i class="fa fa-certificate"></i> Data Pengurus dan Organisasi</span></li>
           <li class="batas"><hr></li>
 
-          <li class="nav-item">
+          {{-- <li class="nav-item">
             <a href="{{ asset('admin/konfigurasi/profil') }}" class="nav-link">
               <i class="nav-icon fas fa-leaf"></i>
               <p>Update Profil</p>
             </a>
-          </li>
+          </li> --}}
 
           <li class="nav-item">
             <a href="{{ asset('admin/berita/jenis_berita/Layanan') }}" class="nav-link">
@@ -53,14 +53,14 @@
           </li>
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-building"></i>
-              <p> Profil Tingkatan KT<i class="fas fa-angle-left right"></i></p>
+              <i class="nav-icon fas fa-laptop"></i>
+              <p>Data Organisasi<i class="fas fa-angle-left right"></i></p>
             </a>
             <ul class="nav nav-treeview">
-              <li class="nav-item"><a href="{{ asset('admin/karangtaruna') }}" class="nav-link"><i class="fas fa-table nav-icon"></i><p>Tingkatan KT</p></a>
+              <li class="nav-item"><a href="{{ asset('admin/karangtaruna') }}" class="nav-link"><i class="fas fa-table nav-icon"></i><p>Daftar Karang Taruna</p></a>
               </li>
-              <li class="nav-item"><a href="{{ asset('admin/karangtaruna/tambah') }}" class="nav-link"><i class="fa fa-plus nav-icon"></i><p>Tambah Organisasi KT </p></a>
-              </li>
+              {{-- <li class="nav-item"><a href="{{ asset('admin/karangtaruna/tambah') }}" class="nav-link"><i class="fa fa-plus nav-icon"></i><p>Tambah Organisasi KT </p></a>
+              </li> --}}
               
             </ul>
           </li>
@@ -70,7 +70,7 @@
               <p> Data Kepengurusan<i class="fas fa-angle-left right"></i></p>
             </a>
             <ul class="nav nav-treeview">
-              <li class="nav-item"><a href="{{ asset('admin/staff') }}" class="nav-link"><i class="fas fa-table nav-icon"></i><p>Data Kepengurusan</p></a>
+              <li class="nav-item"><a href="{{ asset('admin/pengurus') }}" class="nav-link"><i class="fas fa-user nav-icon"></i><p>Daftar Kepengurusan</p></a>
               </li>
               <li class="nav-item"><a href="{{ asset('admin/kategori_tupoksi') }}" class="nav-link"><i class="fa fa-plus nav-icon"></i><p>Tambah TUPOKSI </p></a>
               </li>
