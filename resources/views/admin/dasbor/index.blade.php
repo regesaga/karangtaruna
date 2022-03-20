@@ -1,6 +1,6 @@
 <div class="alert alert-info">
     <p>Hai <strong>{{ Session()->get('nama') }}</strong>, Selamat datang di Halaman Dashboard Administrator</p>
-    <p>Bagi teman-teman yang sudah mengunduh website ini, mohon follow dan like akun Instagram kami di <a href="https://www.instagram.com/javawebmedia/" class="btn btn-warning">https://www.instagram.com/javawebmedia/</a></p>
+    <p>Bagi teman-teman oprator yang akan menambahkan karang taruna kecamatan, desa dan anggota pengurus bilamana ada yang tidak di pahami bisa menghubungi bidang riset dan teknologi karang taruna Kabupaten</a></p>
   </div>
   <hr>
   <!-- Info boxes -->

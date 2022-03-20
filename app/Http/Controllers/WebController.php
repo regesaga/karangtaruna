@@ -12,7 +12,7 @@ class WebController extends Controller
     }
         public function index()
         {
-            $data = ['title' => 'Pemetaan',
+            $data = ['title' => 'Pemetaan Karang Taruna Kabupaten Kuningan',
             'kecamatan' => $this->WebModel->DataKecamatan(),
             'kabupaten' => $this->WebModel->DataKabupaten(),
             'desa' => $this->WebModel->DataDesa(),
