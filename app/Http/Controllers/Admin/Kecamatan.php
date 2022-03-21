@@ -35,12 +35,16 @@ class Kecamatan extends Controller
     }
 
     // edit
-    public function edit(Request $request)
+    public function edit($kec_kode)
     {
     	if(Session()->get('username')=="") { return redirect('login')->with(['warning' => 'Mohon maaf, Anda belum login']);}
     	request()->validate([
-					        'kec_nama' => 'required'
-					        ]);
+            'kec_nama' => 'required',
+            'kec_kab' => 'required',
+            'geojson' => 'required',
+            'warna' => 'required',
+
+        ]);
         DB::table('tbl_kecamatan')->where('kec_kode',$request->kec_kode)->update([
             'kec_nama'   => $request->kec_nama
             

@@ -1,5 +1,5 @@
 
-<div class="modal fade" id="Edit<?php echo $kategori_jabatan->id_kategori_jabatan ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="Edit<?php echo $tbl_kecamatan->kec_kode ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
     <div class="modal-content">
     <div class="modal-header">
@@ -8,19 +8,75 @@
     </div>
     <div class="modal-body">
         
-    <form action="{{ asset('admin/kategori_jabatan/edit') }}" method="post" accept-charset="utf-8">
-    {{ csrf_field() }}
-    <input type="hidden" name="id_kategori_jabatan" value="{{ $kategori_jabatan->id_kategori_jabatan }}">
-    <div class="form-group row">
-        <label class="col-md-3 text-right">Nama Kategori</label>
-        <div class="col-md-9">
-            <input type="text" name="nama_kategori_jabatan" class="form-control" placeholder="Nama kategori jabatan" value="<?php echo $kategori_jabatan->nama_kategori_jabatan ?>" required>
+    <form action="{{ asset('admin/kecamatan/edit') }}" method="post" accept-charset="utf-8">
+    @csrf
+    <div class="row">
+        <div class="col-sm-6">
+          <!-- text input -->
+          <div class="form-group">
+            <label>Kecamatan</label>
+            <input name="kec_nama" value="{{$tbl_kecamatan->kec_nama}}" class="form-control" placeholder="Kecamatan" readonly>
+            <div class="text-danger">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Kode Kecamatan</label>
+            <input name="kec_kab" value="{{$tbl_kecamatan->kec_kab}}" class="form-control" placeholder="Kode Kecamaatan" readonly >
+            <div class="text-danger">
+            </div>
+          </div>
         </div>
-    </div>
-    
-    
-    
-    </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label>Warna</label>
+            <div id="cp1" data-color="primary">
+              
+              <input type="text" class="form-control" name="warna"  style="width:auto"/> <br>
+            </div>
+            <script>
+              $(function () {
+                $('#cp1').colorpicker({
+                  inline: true,
+                  container: true,
+                  extensions: [
+                    {
+                      name: 'swatches', // extension name to load
+                      options: { // extension options
+                        colors: {
+                          'black': '#000000',
+                          'gray': '#888888',
+                          'white': '#ffffff',
+                          'red': 'red',
+                          'default': '#777777',
+                          'primary': '#337ab7',
+                          'success': '#5cb85c',
+                          'info': '#5bc0de',
+                          'warning': '#f0ad4e',
+                          'danger': '#d9534f'
+                        },
+                        namesAsValues: false
+                      }
+                    }
+                  ]
+                });
+              });
+            </script>
+          </div>
+          <div class="text-danger">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <!-- textarea -->
+          <div class="form-group">
+            <label>GeoJson</label>
+            <textarea name="geojson" class="form-control" rows="5" placeholder="GeoJSON">{{$tbl_kecamatan->geojson}}"</textarea>
+            <div class="text-danger">
+            </div>
+          </div>
+        </div>
+      </div>
     
     <div class="form-group row">
         <label class="col-md-3 text-right"></label>

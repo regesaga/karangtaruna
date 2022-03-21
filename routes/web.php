@@ -67,13 +67,13 @@ Route::get('admin/kategori_tupoksi/delete/{par1}', 'App\Http\Controllers\Admin\K
 //Desa
 Route::get('admin/desa', 'App\Http\Controllers\Admin\Desa@index');
 Route::post('admin/desa/tambah', 'App\Http\Controllers\Admin\Desa@tambah');
-Route::post('admin/desa/edit/{desa_kode}', 'App\Http\Controllers\Admin\Desa@edit');
+Route::post('admin/desa/edit/desa_kode', 'App\Http\Controllers\Admin\Desa@edit');
 Route::get('admin/desa/delete/{desa_kode}', 'App\Http\Controllers\Admin\Desa@delete');
 
 //Kecamatan
 Route::get('admin/kecamatan', 'App\Http\Controllers\Admin\Kecamatan@index');
 Route::get('admin/kecamatan/tambah', 'App\Http\Controllers\Admin\Kecamatan@tambah');
-Route::get('admin/kecamatan/edit/{kec_kode}', 'App\Http\Controllers\Admin\Kecamatan@edit');
+Route::get('admin/kecamatan/edit/kec_kode', 'App\Http\Controllers\Admin\Kecamatan@edit');
 Route::get('admin/kecamatan/delete/{kec_kode}', 'App\Http\Controllers\Admin\Kecamatan@delete');
 
 

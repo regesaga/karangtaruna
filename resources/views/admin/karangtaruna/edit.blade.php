@@ -84,6 +84,12 @@ if(isset($error)) {
 </div>
 </div>
 
+<div class="row form-group">
+    <label class="col-md-3 text-right">Periode</label>
+    <div class="col-md-9">
+    <input type="text" name="periode" class="form-control" placeholder="periode" value="{{ $karangtaruna->periode }}">
+    </div>
+    </div>
 
 
 <div class="row form-group">
