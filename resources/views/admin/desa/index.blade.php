@@ -79,7 +79,7 @@
               <td><?php echo $tbl_desa->desa_kode ?></td>
               <td><?php echo $tbl_desa->desa_nama ?></td>
               <td><?php echo $tbl_desa->desa_kec ?></td>
-              <td><?php echo $tbl_desa->warna ?></td>
+              <td style="background-color: {{$tbl_desa-> warna}}" ></td>
               <td><?php echo $tbl_desa->geojson ?></td>
               <td><div class="btn-group">
                   <a href="{{ asset('admin/desa/edit/'.$tbl_desa->desa_kode) }}" 

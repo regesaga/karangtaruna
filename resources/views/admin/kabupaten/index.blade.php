@@ -87,7 +87,7 @@
               <td><?php echo $tbl_kabupaten->kab_kode ?></td>
               <td><?php echo $tbl_kabupaten->kab_nama ?></td>
               <td><?php echo $tbl_kabupaten->kab_prov ?></td>
-              <td><?php echo $tbl_kabupaten->warna ?></td>
+              <td style="background-color: {{$tbl_kabupaten-> warna}}" ></td>
               <td><?php echo $tbl_kabupaten->geojson ?></td>
               <td><div class="btn-group">
                   <a href="{{ asset('admin/kabupaten/edit/'.$tbl_kabupaten->kab_kode) }}" 

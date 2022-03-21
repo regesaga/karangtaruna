@@ -1,7 +1,6 @@
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
 <div id="map" style="width: 100%; height:500px;"></div>
-    
     <script>
 
       var peta1 = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
@@ -45,7 +44,6 @@
           "Dark": peta4,
   
       };
-      
   
       var overlayMaps = {
            "kecamatan": kecamatan,
@@ -81,7 +79,7 @@
               <td><?php echo $tbl_kecamatan->kec_kode ?></td>
               <td><?php echo $tbl_kecamatan->kec_nama ?></td>
               <td><?php echo $tbl_kecamatan->kec_kab ?></td>
-              <td><?php echo $tbl_kecamatan->warna ?></td>
+              <td style="background-color: {{$tbl_kecamatan-> warna}}" ></td>
               <td><?php echo $tbl_kecamatan->geojson ?></td>
               <td><div class="btn-group">
                   <a href="{{ asset('admin/kecamatan/edit/'.$tbl_kecamatan->kec_kode) }}" 
