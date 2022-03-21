@@ -191,6 +191,34 @@
               </li>
             </ul>
           </li>
+              <!-- Website Content -->
+              <li class="batas"><hr> <span class="infoku"><i class="fa fa-certificate"></i> Peta Kecamatan dan Desa</span></li>
+              <li class="batas"><hr></li>
+    
+              {{-- <li class="nav-item">
+                <a href="{{ asset('admin/konfigurasi/profil') }}" class="nav-link">
+                  <i class="nav-icon fas fa-leaf"></i>
+                  <p>Update Profil</p>
+                </a>
+              </li> --}}
+    
+              <li class="nav-item has-treeview">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fas fa-laptop"></i>
+                  <p> P E T A<i class="fas fa-angle-left right"></i></p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item"><a href="{{ asset('admin/kabupaten') }}" class="nav-link"><i class="fas fa-laptop nav-icon"></i><p>Peta Kabupaten</p></a>
+                  </li>
+                   <li class="nav-item"><a href="{{ asset('admin/kecamatan') }}" class="nav-link"><i class="fas fa-laptop nav-icon"></i><p>Peta Kecamatan</p></a>
+                  </li>
+                  <li class="nav-item"><a href="{{ asset('admin/desa') }}" class="nav-link"><i class="fas fa-laptop nav-icon"></i><p>Peta Desa</p></a>
+                  </li>
+                
+                  
+                </ul>
+              </li>
+             
 
           
           
