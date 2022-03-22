@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,10 +24,10 @@ Auth::routes();
 Route::get('/home', 'App\Http\Controllers\Admin\HomeController@index');
 
 //Login
-Route::get('login', 'App\Http\Controllers\Login@index');
-Route::post('login/check', 'App\Http\Controllers\Login@check');
-Route::get('login/lupa', 'App\Http\Controllers\Login@lupa');
-Route::get('login/logout', 'App\Http\Controllers\Login@logout');
+Route::get('/login', 'App\Http\Controllers\Login@index');
+Route::post('/login/check', 'App\Http\Controllers\Login@check');
+Route::get('/login/lupa', 'App\Http\Controllers\Login@lupa');
+Route::get('/login/logout', 'App\Http\Controllers\Login@logout');
 /* END FRONT END */
 /* BACK END */
 
@@ -58,7 +59,7 @@ Route::get('admin/kategori_jabatan/delete/{par1}', 'App\Http\Controllers\Admin\K
 // kategori_tupoksi
 Route::get('admin/kategori_tupoksi', 'App\Http\Controllers\Admin\Kategori_tupoksi@index');
 Route::post('admin/kategori_tupoksi/tambah', 'App\Http\Controllers\Admin\Kategori_tupoksi@tambah');
-Route::post('admin/kategori_tupoksi/edit', 'App\Http\Controllers\Admin\Kategori_tupoksi@edit');
+Route::post('admin/kategori_tupoksi/edit/{par1}', 'App\Http\Controllers\Admin\Kategori_tupoksi@edit');
 Route::get('admin/kategori_tupoksi/delete/{par1}', 'App\Http\Controllers\Admin\Kategori_tupoksi@delete');
 
 
@@ -67,13 +68,15 @@ Route::get('admin/kategori_tupoksi/delete/{par1}', 'App\Http\Controllers\Admin\K
 //Desa
 Route::get('admin/desa', 'App\Http\Controllers\Admin\Desa@index');
 Route::post('admin/desa/tambah', 'App\Http\Controllers\Admin\Desa@tambah');
-Route::post('admin/desa/edit/desa_kode', 'App\Http\Controllers\Admin\Desa@edit');
-Route::get('admin/desa/delete/{desa_kode}', 'App\Http\Controllers\Admin\Desa@delete');
+Route::get('admin/desa/edit/{desa_kode}', 'App\Http\Controllers\Admin\Desa@edit');
+Route::post('admin/desa/delete/{desa_kode}', 'App\Http\Controllers\Admin\Desa@delete');
 
 //Kecamatan
 Route::get('admin/kecamatan', 'App\Http\Controllers\Admin\Kecamatan@index');
 Route::get('admin/kecamatan/tambah', 'App\Http\Controllers\Admin\Kecamatan@tambah');
-Route::get('admin/kecamatan/edit/kec_kode', 'App\Http\Controllers\Admin\Kecamatan@edit');
+Route::get('admin/kecamatan/edit/{kec_kode}', 'App\Http\Controllers\Admin\Kecamatan@edit');
+Route::post('admin/kecamatan/edit_proses', 'App\Http\Controllers\Admin\Kecamatan@edit_proses');
+
 Route::get('admin/kecamatan/delete/{kec_kode}', 'App\Http\Controllers\Admin\Kecamatan@delete');
 
 

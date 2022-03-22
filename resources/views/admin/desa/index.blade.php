@@ -50,12 +50,13 @@
        };
   
       L.control.layers(baseMaps,overlayMaps).addTo(map);
-      @foreach ($tbl_desa as $data)
+      @foreach ($desa as $data)
         L.geoJSON(<?= $data->geojson ?>).addTo(desa).bindPopup("{{ $data->desa_nama}}");
     @endforeach
   </script>
 <form action="{{ asset('admin/desa/proses') }}" method="post" accept-charset="utf-8">
-  {{ csrf_field() }}
+  {{method_field('post')}}
+    @csrf
 
 
     <div class="clearfix"><hr></div>
@@ -73,18 +74,17 @@
         </thead>
         <tbody>
           
-          <?php foreach($tbl_desa as $tbl_desa) { ?>
+          <?php foreach($desa as $desa) { ?>
 
             <tr class="odd gradeX">
-              <td><?php echo $tbl_desa->desa_kode ?></td>
-              <td><?php echo $tbl_desa->desa_nama ?></td>
-              <td><?php echo $tbl_desa->desa_kec ?></td>
-              <td style="background-color: {{$tbl_desa-> warna}}" ></td>
-              <td><?php echo $tbl_desa->geojson ?></td>
+              <td><?php echo $desa->desa_kode ?></td>
+              <td><?php echo $desa->desa_nama ?></td>
+              <td><?php echo $desa->desa_kec ?></td>
+              <td style="background-color: {{$desa-> warna}}" ></td>
+              <td><?php echo $desa->geojson ?></td>
               <td><div class="btn-group">
-                  <a href="{{ asset('admin/desa/edit/'.$tbl_desa->desa_kode) }}" 
+                  <a href="{{ asset('admin/desa/edit/'.$desa->desa_kode) }}" 
                     class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
-                    <a href="{{ asset('admin/desa/delete/'.$tbl_desa->desa_kode) }}" class="btn btn-danger btn-sm delete-link"><i class="fa fa-trash"></i></a>
                   </div>
                 </td>
               </tr>

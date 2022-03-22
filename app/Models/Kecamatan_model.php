@@ -3,33 +3,34 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
-class Kabupaten_model extends Model
+class Kecamatan_model extends Model
 {
 
-	protected $table 		= "tbl_kabupaten";
-	protected $primaryKey 	= 'kab_kode';
+	protected $table 		= "tbl_kecamatan";
+	protected $primaryKey 	= 'kec_kode';
 
     // listing
     public function semua()
     {
-        $query = DB::table('tbl_kabupaten')
-            ->select('tbl_kabupaten.*')
-            ->orderBy('tbl_kabupaten.kab_kode','DESC')
+        $query = DB::table('tbl_kecamatan')
+            ->select('tbl_kecamatan.*')
+            ->orderBy('tbl_kecamatan.kec_kode','DESC')
             ->get();
         return $query;
     }
 
-    // listing
-    public function cari($keywords)
+ 
+
+
+    public function detail($kec_kode)
     {
-        $query = DB::table('tbl_kabupaten')
-            ->select('tbl_kabupaten.*')
-            ->where('tbl_kabupaten.kab_nama', 'LIKE', "%{$keywords}%") 
-            ->orderBy('kab_kod','DESC')
-            ->get();
+        $query = DB::table('tbl_kecamatan')
+            ->select('tbl_kecamatan.*')
+            ->where('tbl_kecamatan.kec_kode',$kec_kode)
+            ->orderBy('kec_kode','DESC')
+            ->first();
         return $query;
     }
 
-    
    
 }

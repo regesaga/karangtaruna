@@ -1,5 +1,5 @@
 <p class="text-right">
-	<a href="{{ asset('admin/karangtaruna') }}" class="btn btn-success btn-sm">
+	<a href="{{ asset('admin/desa') }}" class="btn btn-success btn-sm">
 		<i class="fa fa-backward"></i> Kembali
 	</a>
 </p>
@@ -27,92 +27,84 @@ if(isset($error)) {
     </div>
 @endif
 
-<form action="{{ asset('admin/karangtaruna/edit_proses') }}" method="post" enctype="multipart/form-data" accept-charset="utf-8">
-{{ csrf_field() }}
-<input type="hidden" name="id_karangtaruna" value="{{ $karangtaruna->id_karangtaruna }}">
+<form action="{{ asset('admin/desa/edit_proses') }}" method="post" enctype="multipart/form-data" accept-charset="utf-8">
+  {{method_field('post')}}
+  @csrf
+<input type="hidden" name="desa_kode" value="{{ $desa->desa_kode }}">
 
-
-<div class="row form-group">
-<label class="col-md-3 text-right">Kategori Tingkat karangtaruna </label>
-<div class="col-md-9">
-<select name="tingkat" class="form-control select2">
-  <option value="Kabupaten" >Kabupaten</option>
-  <option value="Kecamatan" >Kecamatan</option>
-  <option value="Desa" >Desa</option>
-  <option value="Kelurahan" >Kelurahan</option>
-
-</select>
+<div class="row">
+  <div class="col-sm-6">
+    <!-- text input -->
+    <div class="form-group">
+      <label>desa</label>
+      <input name="desa_nama" value="{{$desa->desa_nama}}" class="form-control" placeholder="desa" readonly>
+      <div class="text-danger">
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Kode Kabupaten</label>
+      <input name="desa_kec" value="{{$desa->desa_kec}}" class="form-control" placeholder="Kode Kecamaatan" readonly >
+      <div class="text-danger">
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="form-group">
+      <label>Warna</label>
+      <div id="cp1" data-color="primary">
+        
+        <input type="text" class="form-control" name="warna"  style="width:auto"/> <br>
+      </div>
+      <script>
+        $(function () {
+          $('#cp1').colorpicker({
+            inline: true,
+            container: true,
+            extensions: [
+              {
+                name: 'swatches', // extension name to load
+                options: { // extension options
+                  colors: {
+                    'black': '#000000',
+                    'gray': '#888888',
+                    'white': '#ffffff',
+                    'red': 'red',
+                    'default': '#777777',
+                    'primary': '#337ab7',
+                    'success': '#5cb85c',
+                    'info': '#5bc0de',
+                    'warning': '#f0ad4e',
+                    'danger': '#d9534f'
+                  },
+                  namesAsValues: false
+                }
+              }
+            ]
+          });
+        });
+      </script>
+    </div>
+    <div class="text-danger">
+    </div>
+  </div>
 </div>
-</div>
-
-<div class="row form-group">
-<label class="col-md-3 text-right">Nama karangtaruna <span class="text-danger">*</span></label>
-<div class="col-md-9">
-<input type="text" name="nama_karangtaruna" class="form-control" placeholder="Nama karangtaruna" value="{{ $karangtaruna->nama_karangtaruna }}" required>
-</div>
-</div>
-
-<div class="row form-group">
-<label class="col-md-3 text-right">Kecamatan</label>
-<div class="col-md-9">
-<input type="text" name="kecamatan" class="form-control" placeholder="kecamatan (Position)" value="{{ $karangtaruna->kecamatan }}">
-</div>
-</div>
-
-<div class="row form-group">
-<label class="col-md-3 text-right">Desa</label>
-<div class="col-md-9">
-<input type="text" name="desa" class="form-control" placeholder="desa Terakhir" value="{{ $karangtaruna->desa }}">
-</div>
-</div>
-
-<div class="row form-group">
-<label class="col-md-3 text-right">Lokasi Sekertariat</label>
-<div class="col-md-9">
-<input type="text" name="lokasi" class="form-control" placeholder="lokasi" value="{{ $karangtaruna->lokasi }}">
-</div>
-</div>
-
-<div class="row form-group">
-<label class="col-md-3 text-right">Sk Pengukuhan</label>
-<div class="col-md-5">
-<input type="text" name="sk" class="form-control" placeholder="No Sk" value="{{ $karangtaruna->sk }}">
-</div>
-<div class="col-md-4">
-<input type="text" name="ttd" class="form-control" placeholder="yang Mengukuhkan" value="{{ $karangtaruna->ttd }}">
-<small class="text-success">Yang Mengukuhkan</small>
-</div>
-</div>
-
-
-
-<div class="row form-group">
-<label class="col-md-3 text-right">Upload gambar/Foto</label>
-<div class="col-md-9">
-<input type="file" name="gambar" class="form-control" placeholder="Upload gambar">
-<small>Gambar saat ini:
-<br><?php if($karangtaruna->gambar!="") { ?>
-<img src="{{ asset('assets/upload/karangtaruna/thumbs/'.$karangtaruna->gambar) }}" class="img img-thumbnail" width="80">
-<?php } ?>
-</small>
-</div>
-</div>
-
-<div class="row form-group">
-<label class="col-md-3 text-right">Deskripsi Lengkap</label>
-<div class="col-md-9">
-<textarea name="isi" class="form-control" id="kontenku" placeholder="Visi / Misi">{{ $karangtaruna->isi }}</textarea>
-</div>
+<div class="row">
+  <div class="col-sm-12">
+    <!-- textarea -->
+    <div class="form-group">
+      <label>GeoJson</label>
+      <textarea name="geojson" class="form-control" rows="5" placeholder="GeoJSON">{{$desa->geojson}}"</textarea>
+      <div class="text-danger">
+      </div>
+    </div>
+  </div>
 </div>
 
-
-<div class="row form-group">
-<label class="col-md-3 text-right"></label>
-<div class="col-md-9">
-<div class="form-group">
+<div class="form-group row">
+  <label class="col-md-3 text-right"></label>
+  <div class="col-md-9">
+<div class="btn-group">
 <input type="submit" name="submit" class="btn btn-success " value="Simpan Data">
-<input type="reset" name="reset" class="btn btn-info " value="Reset">
-</div>
-</div>
-</div>
+<button type="button" class="btn btn-info" data-dismiss="modal">Cancel</button>
+<div class="clearfix"></div>
 </form>

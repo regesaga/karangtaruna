@@ -15,7 +15,6 @@ $site                 = DB::table('konfigurasi')->first();
   <!-- Font Awesome -->
   <link rel="stylesheet" href="{{ asset('assets/admin/plugins/fontawesome-free/css/all.min.css') }}">
   <!-- Tempusdominus Bbootstrap 4 -->
-  <link rel="stylesheet" href="{{ asset('assets/admin/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') }}">
   <!-- Select2 -->
   <link rel="stylesheet" href="{{ asset('assets/admin/plugins/select2/css/select2.min.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/admin/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
@@ -33,29 +32,29 @@ $site                 = DB::table('konfigurasi')->first();
   <link rel="stylesheet" href="{{ asset('assets/admin/plugins/daterangepicker/daterangepicker.css') }}">
   <!-- summernote -->
   <link rel="stylesheet" href="{{ asset('assets/admin/plugins/summernote/summernote-bs4.css') }}">
+
+
+  <link rel="stylesheet" href="{{ asset('assets/admin/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css')}}">
+
+  <script src="{{ asset('assets/admin/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js') }}"></script>
+
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet') }}">
   <!-- sweetalert -->
   <script src="{{ asset('assets/sweetalert/js/sweetalert.min.js') }}"></script>
   <!-- angular -->
-  <script src="{{ asset('assets/angular/angular.min.js') }}"></script>  
   <link rel="stylesheet" type="text/css" href="{{ asset('assets/sweetalert/css/sweetalert.css') }}">
   <!-- jQuery -->
   <!-- <script src="{{ asset('assets/admin/plugins/jquery/jquery.min.js') }}"></script> -->
   <script src="{{ asset('assets/jquery-ui/external/jquery/jquery.js') }}"></script>
   <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js') }}"></script> -->
   <!-- JQUERY CHAINED -->
-  <script src="{{ asset('assets/js/jquery.chained.min.js" type="text/javascript') }}"></script> 
   <!-- jQuery UI 1.11.4 -->
   <script src="{{ asset('assets/admin/plugins/jquery-ui/jquery-ui.min.js') }}"></script>
   <link href="{{ asset('assets/admin/plugins/jquery-ui/jquery-ui.min.css') }}" rel="stylesheet">
-  <script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js') }}"></script>
   
   <!-- Viewer js -->
-  <script src="{{ asset('assets/viewerjs/pdf.js') }}"></script>
   <!-- TIMEPICKER -->
-  <script src="{{ asset('assets/timepicker/timepicker.min.js') }}"></script>
-  <link href="{{ asset('assets/timepicker/timepicker.min.css') }}" rel="stylesheet"/>
   <script src="{{ asset('assets/tinymce/js/tinymce/tinymce.min.js') }}" referrerpolicy="origin"></script>
   <style type="text/css" media="screen">
     body {

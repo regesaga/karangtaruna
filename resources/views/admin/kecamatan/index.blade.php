@@ -50,12 +50,13 @@
        };
   
       L.control.layers(baseMaps,overlayMaps).addTo(map);
-      @foreach ($tbl_kecamatan as $data)
+      @foreach ($kecamatan as $data)
         L.geoJSON(<?= $data->geojson ?>).addTo(kecamatan).bindPopup("{{ $data->kec_nama}}");
     @endforeach
   </script>
-<form action="{{ asset('admin/kecamatan/proses') }}" method="post" accept-charset="utf-8">
-  {{ csrf_field() }}
+<form action="{{ asset('admin/kecamatan/edit') }}" method="post" accept-charset="utf-8">
+  {{method_field('post')}}
+    @csrf
 
 
     <div class="clearfix"><hr></div>
@@ -73,18 +74,18 @@
         </thead>
         <tbody>
           
-          <?php foreach($tbl_kecamatan as $tbl_kecamatan) { ?>
+          <?php foreach($kecamatan as $kecamatan) { ?>
 
             <tr class="odd gradeX">
-              <td><?php echo $tbl_kecamatan->kec_kode ?></td>
-              <td><?php echo $tbl_kecamatan->kec_nama ?></td>
-              <td><?php echo $tbl_kecamatan->kec_kab ?></td>
-              <td style="background-color: {{$tbl_kecamatan-> warna}}" ></td>
-              <td><?php echo $tbl_kecamatan->geojson ?></td>
+              <td><?php echo $kecamatan->kec_kode ?></td>
+              <td><?php echo $kecamatan->kec_nama ?></td>
+              <td><?php echo $kecamatan->kec_kab ?></td>
+              <td style="background-color: {{$kecamatan-> warna}}" ></td>
+              <td><?php echo $kecamatan->geojson ?></td>
               <td><div class="btn-group">
-                  <a href="{{ asset('admin/kecamatan/edit/'.$tbl_kecamatan->kec_kode) }}" 
+                  <a href="{{ asset('admin/kecamatan/edit/'.$kecamatan->kec_kode) }}" 
                     class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
-                    <a href="{{ asset('admin/kecamatan/delete/'.$tbl_kecamatan->kec_kode) }}" class="btn btn-danger btn-sm delete-link"><i class="fa fa-trash"></i></a>
+                    
                   </div>
                 </td>
               </tr>
@@ -92,7 +93,7 @@
             </tbody>
           </table>
       </div>
-
+      
       </form>
 
       <div class="clearfix"><hr></div>

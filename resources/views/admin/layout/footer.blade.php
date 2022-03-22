@@ -188,11 +188,9 @@ $(document).on("click", ".approval-link", function(e){
 <!-- Sparkline -->
 <script src="{{ asset('assets/admin/plugins/sparklines/sparkline.js') }}"></script>
 <!-- Tempusdominus Bootstrap 4 -->
-<script src="{{ asset('assets/admin/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js') }}"></script>
 <!-- Summernote -->
 <script src="{{ asset('assets/admin/plugins/summernote/summernote-bs4.min.js') }}"></script>
 <!-- tinymce -->
-  <script src="{{ asset('assets/ckeditor/ckeditor.js') }}" type="text/javascript"></script>
 <!-- overlayScrollbars -->
 <script src="{{ asset('assets/admin/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
 <!-- AdminLTE App -->

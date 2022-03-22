@@ -70,5 +70,6 @@
         L.geoJSON(<?= $data->geojson ?>).addTo(desa).bindPopup("{{ $data->desa_nama}}");
     @endforeach
    
+    
 
 </script>

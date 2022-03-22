@@ -19,17 +19,18 @@ class Desa_model extends Model
         return $query;
     }
 
-    // listing
-    public function cari($keywords)
+ 
+
+
+    public function detail($desa_kode)
     {
         $query = DB::table('tbl_desa')
             ->select('tbl_desa.*')
-            ->where('tbl_desa.desa_nama', 'LIKE', "%{$keywords}%") 
-            ->orderBy('kab_kod','DESC')
-            ->get();
+            ->where('tbl_desa.desa_kode',$desa_kode)
+            ->orderBy('desa_kode','DESC')
+            ->first();
         return $query;
     }
 
-    
    
 }
