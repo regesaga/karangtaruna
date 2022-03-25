@@ -2,12 +2,21 @@
 namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Desa_model extends Model
+
 {
+    
 
 	protected $table 		= "tbl_desa";
 	protected $primaryKey 	= 'desa_kode';
+    protected $fillable = [
+        'desa_nama',
+        'desa_kec'
+    ];
+    public $incrementing = false;
+    protected $keyType = 'string';
 
     // listing
     public function semua()

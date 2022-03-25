@@ -7,6 +7,9 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Image;
 use App\Models\Karangtaruna_model;
+use App\Models\Desa_model;
+use App\Models\Kecamatan_model;
+use App\Models\Kabupaten_model;
 
 class Karangtaruna extends Controller
 {
@@ -97,35 +100,36 @@ class Karangtaruna extends Controller
         return view('admin/layout/wrapper',$data);
     }
 
-    // //Kategori
-    // public function kategori($id_kategori_karangtaruna)
-    // {
-    //     if(Session()->get('username')=="") { return redirect('login')->with(['warning' => 'Mohon maaf, Anda belum login']);}
-    //     $mykarangtaruna           = new Karangtaruna_model();
-    //     $karangtaruna             = $mykarangtaruna->all_kategori_karangtaruna($id_kategori_karangtaruna);
-    //     $kategori_karangtaruna    = DB::table('kategori_karangtaruna')->orderBy('urutan','ASC')->get();
+    
+    
+  
 
-    //     $data = array(  'title'             => 'Data karangtaruna (Board and Team)',
-    //                     'karangtaruna'            => $karangtaruna,
-    //                     'kategori_karangtaruna'   => $kategori_karangtaruna,
-    //                     'content'           => 'admin/karangtaruna/index'
-    //                 );
-    //     return view('admin/layout/wrapper',$data);
-    // }
 
-    // Tambah
-    public function tambah()
+    public function tambah(Request $request)
     {
         if(Session()->get('username')=="") { return redirect('login')->with(['warning' => 'Mohon maaf, Anda belum login']);}
         //$kategori_karangtaruna    = DB::table('kategori_karangtaruna')->orderBy('urutan','ASC')->get();
-
+        $kabupaten = Kabupaten_model::all();
         $data = array(  'title'             => 'Tambah karangtaruna',
                         //'kategori_karangtaruna'   => $kategori_karangtaruna,
-                        'content'           => 'admin/karangtaruna/tambah'
-                    );
-        return view('admin/layout/wrapper',$data);
-    }
+                        'content'           => 'admin/karangtaruna/tambah',
+                        'kabupaten'=>$kabupaten
 
+                    );
+        return view('admin/layout/wrapper',$data );
+    }
+    public function getKabupaten(){
+        $kabupaten = Kabupaten_model::all();
+        return view('admin/layout/wrapper',['title'=>'Daftar Kabupaten','content'=> 'admin/karangtaruna/tambah','kabupaten'=>$kabupaten]);
+    }
+    public function getKecamatan(Request $request){
+        $kecamatan = Kecamatan_model::where("kec_kab",$request->kabID)->pluck('kec_kode','kec_nama');
+        return response()->json($kecamatan);
+    }
+    public function getDesa(Request $request){
+        $desa = Desa_model::where("desa_kec",$request->kecID)->pluck('desa_kode','desa_nama');
+        return response()->json($desa);
+    }
     // edit
     public function edit($id_karangtaruna)
     {

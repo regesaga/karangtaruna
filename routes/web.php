@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Auth;
 
 //Front Endd
 //Home
+use App\Http\Controllers\Admin\Karangtaruna;
 
 
 Route::get('/','App\Http\Controllers\WebController@index');
@@ -47,6 +48,10 @@ Route::get('admin/karangtaruna/delete/{par1}', 'App\Http\Controllers\Admin\Karan
 Route::post('admin/karangtaruna/tambah_proses', 'App\Http\Controllers\Admin\Karangtaruna@tambah_proses');
 Route::post('admin/karangtaruna/edit_proses', 'App\Http\Controllers\Admin\Karangtaruna@edit_proses');
 Route::post('admin/karangtaruna/proses', 'App\Http\Controllers\Admin\Karangtaruna@proses');
+
+Route::get('admin/karangtaruna/getKecamatan', 'App\Http\Controllers\Admin\Karangtaruna@getKecamatan');
+Route::get('admin/karangtaruna/getDesa', 'App\Http\Controllers\Admin\Karangtaruna@getDesa');
+
 
 
 

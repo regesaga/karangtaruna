@@ -4,7 +4,7 @@ $('#kabupaten').change(function(){
     if(kabID){
         $.ajax({
            type:"GET",
-           url:"/getkecamatan?kabID="+kabID,
+           url:"getKecamatan?kabID="+kabID,
            dataType: 'JSON',
            success:function(res){               
             if(res){
@@ -32,7 +32,7 @@ $('#kabupaten').change(function(){
     if(kecID){
         $.ajax({
            type:"GET",
-           url:"getdesa?kecID="+kecID,
+           url:"getDesa?kecID="+kecID,
            dataType: 'JSON',
            success:function(res){               
             if(res){
